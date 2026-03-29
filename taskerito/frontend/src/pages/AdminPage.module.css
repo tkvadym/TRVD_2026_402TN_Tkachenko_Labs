@@ -1,0 +1,186 @@
+.page { flex: 1; display: flex; flex-direction: column; }
+
+.main {
+    flex: 1;
+    max-width: var(--container-xl);
+    margin-inline: auto;
+    width: 100%;
+    padding: var(--space-10) var(--container-padding-x);
+}
+
+.pageHeader {
+    display: flex;
+    align-items: center;
+    gap: var(--space-4);
+    margin-bottom: var(--space-8);
+}
+
+.pageTitle {
+    font-family: var(--font-display);
+    font-size: var(--text-2xl);
+    font-weight: var(--weight-bold);
+    color: var(--text-primary);
+    letter-spacing: var(--tracking-snug);
+}
+
+.count {
+    font-size: var(--text-sm);
+    font-weight: var(--weight-semibold);
+    color: var(--text-tertiary);
+    background: var(--bg-elevated);
+    border: 1.5px solid var(--border-default);
+    border-radius: var(--radius-full);
+    padding: 3px var(--space-3);
+}
+
+.tableWrapper {
+    background: var(--bg-elevated);
+    border-radius: var(--radius-2xl);
+    box-shadow: var(--shadow-card);
+    overflow: hidden;
+    overflow-x: auto;
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.table th {
+    text-align: left;
+    padding: var(--space-4) var(--space-5);
+    font-size: var(--text-xs);
+    font-weight: var(--weight-bold);
+    letter-spacing: var(--tracking-widest);
+    text-transform: uppercase;
+    color: var(--text-tertiary);
+    border-bottom: 1px solid var(--border-subtle);
+    background: var(--bg-surface);
+    white-space: nowrap;
+}
+
+.table td {
+    padding: var(--space-4) var(--space-5);
+    font-size: var(--text-sm);
+    color: var(--text-primary);
+    border-bottom: 1px solid var(--border-subtle);
+    vertical-align: middle;
+}
+
+.table tr:last-child td { border-bottom: none; }
+
+.table tbody tr:hover td {
+    background: var(--bg-surface);
+}
+
+.tdId   { color: var(--text-tertiary) !important; font-size: 12px !important; font-weight: 500 !important; }
+.tdEmail{ color: var(--text-secondary) !important; }
+
+.editBtn {
+    padding: var(--space-2) var(--space-4);
+    border-radius: var(--radius-sm);
+    font-size: var(--text-xs);
+    font-weight: var(--weight-bold);
+    border: 1.5px solid var(--border-default);
+    color: var(--text-secondary);
+    background: var(--bg-surface);
+    cursor: pointer;
+    transition: var(--transition-base);
+    white-space: nowrap;
+}
+
+.editBtn:hover {
+    border-color: var(--color-lavender-300);
+    color: var(--color-lavender-600);
+    background: var(--bg-accent-soft);
+}
+
+/* ─── EDIT FORM (в Modal) ───────────────────────────────── */
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+}
+
+.field {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+}
+
+.label {
+    font-size: var(--text-sm);
+    font-weight: var(--weight-semibold);
+    color: var(--text-primary);
+}
+
+.select {
+    padding: var(--space-3) var(--space-4);
+    border-radius: var(--radius-md);
+    border: 1.5px solid var(--border-default);
+    background: var(--bg-surface);
+    font-family: var(--font-body);
+    font-size: var(--text-base);
+    color: var(--text-primary);
+    transition: var(--transition-base);
+}
+
+.select:focus {
+    outline: none;
+    border-color: var(--color-lavender-500);
+    box-shadow: 0 0 0 3px rgba(116, 96, 224, 0.12);
+}
+
+.checkboxLabel {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+    font-size: var(--text-sm);
+    font-weight: var(--weight-medium);
+    color: var(--text-primary);
+    cursor: pointer;
+}
+
+.actions {
+    display: flex;
+    gap: var(--space-3);
+    justify-content: flex-end;
+    margin-top: var(--space-2);
+    padding-top: var(--space-4);
+    border-top: 1px solid var(--border-subtle);
+}
+
+.cancelBtn {
+    padding: var(--space-3) var(--space-5);
+    border-radius: var(--radius-md);
+    font-size: var(--text-sm);
+    font-weight: var(--weight-semibold);
+    color: var(--text-secondary);
+    border: 1.5px solid var(--border-default);
+    background: var(--bg-surface);
+    cursor: pointer;
+    transition: var(--transition-base);
+}
+
+.cancelBtn:hover { border-color: var(--border-strong); color: var(--text-primary); }
+
+.saveBtn {
+    padding: var(--space-3) var(--space-6);
+    border-radius: var(--radius-md);
+    font-size: var(--text-sm);
+    font-weight: var(--weight-bold);
+    color: #fff;
+    background: var(--color-lavender-500);
+    border: none;
+    cursor: pointer;
+    transition: var(--transition-base);
+    box-shadow: var(--shadow-lavender);
+}
+
+.saveBtn:hover:not(:disabled) {
+    background: var(--color-lavender-600);
+    transform: translateY(-1px);
+}
+
+.saveBtn:disabled { opacity: 0.55; cursor: not-allowed; transform: none; box-shadow: none; }
